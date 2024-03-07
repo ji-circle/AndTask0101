@@ -7,6 +7,4 @@ class SubtractOperation(firstNum: Int, secondNum: Int) : AbstractOperation(first
         return result
     }
 
-
-
 }
