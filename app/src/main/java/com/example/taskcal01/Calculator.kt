@@ -11,22 +11,25 @@ class Calculator {
 //        secondNum = _secondNum
 //    }
 
-    fun returnResult(firstNum:Double, operSym:Char, secondNum:Double): Double {
-        return when(operSym){
-            '+' -> {
+    fun returnResult(firstNum:Int, operSym:Int, secondNum:Int): Any {
+        when(operSym){
+            1 -> {
                 return firstNum+secondNum
             }
-            '-' -> {
+            2 -> {
                 return firstNum-secondNum
             }
-            '*' -> {
+            3 -> {
                 return firstNum * secondNum
             }
-            '/' -> {
+            4 -> {
                 return firstNum / secondNum
             }
-            else -> { //%
+            5 -> { //%
                 return firstNum % secondNum
+            }
+            else -> {
+                return "연산자 입력 오류"
             }
     }
 

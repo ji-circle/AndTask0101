@@ -1,57 +1,40 @@
 package com.example.taskcal01
 
 fun main(){
-    var userInput : String?
-    var prevResult : Double = 0.0
-    var result : Double
-    var firstNum : Double = 0.0
-    var operSym : Char = 'a'
-    var secondNum : Double = 0.0
-    var checkOrder = false
+    var firstMain : Int = 0
+    var operSym : Int
+    var secondMain : Int
+    var result : Any
+    var firstTrial = Calculator()
 
-    while(true){
-        try {
-            userInput = readLine()
+    println("첫 번째 숫자를 입력하세요")
+    firstMain = readLine()!!.toInt()
 
-            if(userInput=="-1") {
-                //종료하기?
-                break
-            }
-            if(userInput?.first()!=null){
-                for(i in userInput) {
-                    if(i!='+' && i != '-' && i != '*' && i != '/' && i != '%'){
-                        if(!checkOrder) {
-                            firstNum = firstNum*10 + i.toString().toInt()
-                        } else {
-                            secondNum = secondNum*10 + i.toString().toInt()
-                        }
-                    }
-                    else{
-                        checkOrder = true
-                        operSym = i
-                    }
-                }
-                var firstTry = Calculator()
-                result = firstTry.returnResult(firstNum,operSym,secondNum)
-                println(result)
-                prevResult = result
-                firstNum = 0.0
-                secondNum = 0.0
+    while(firstMain!=-1){
 
-            } //else {
-                //
-            //}
+        println("연산자를 선택하세요. [1 = +, 2 = -, 3 = *, 4 = /, 5 = % ]")
+        operSym = readLine()!!.toInt()
 
-        } catch(e:Exception){
-            println("다시 입력하기")
-            continue
-        }
+        println("두 번째 숫자를 입력하세요")
+        secondMain = readLine()!!.toInt()
+
+
+        result = firstTrial.returnResult(firstMain, operSym, secondMain)
+        println(result)
+        println("")
+
+        println("첫 번째 숫자를 입력하세요")
+        firstMain = readLine()!!.toInt()
+
     }
+    println("-1 입력, 계산기 종료")
 
 
 
-        }
+
+
 
 
     //종료?
 
+}
