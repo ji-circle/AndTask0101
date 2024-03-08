@@ -1,8 +1,8 @@
 package com.example.taskcal01
 
-open class Calculator {
+class Calculator {
     lateinit var classCal : Any
-    open fun returnResult(firstNum:Int, operSym:Int, secondNum:Int): Any {
+    fun returnResult(firstNum:Int, operSym:Int, secondNum:Int): Any {
         when (operSym) {
             1 -> {
                 classCal = AddOperation(firstNum, secondNum).calculateNow()
